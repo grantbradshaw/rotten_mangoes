@@ -10,6 +10,6 @@ Movie.create!(
   director: 'Sam Mendes',
   runtime_in_minutes: 98,
   description: 'A couple who is expecting their first child travel around the U.S. in order to find a perfect place to start their family. Along the way, they have misadventures and find fresh connections with an assortment of relatives and old friends who just might help them discover "home" on their own terms for the first time.',
-  poster_image_url: 'http://ecx.images-amazon.com/images/I/51rrQ47zVIL._SY344_BO1,204,203,200_.jpg',
+  poster: '',
   release_date: Date.new(2009, 6, 26)
   )
