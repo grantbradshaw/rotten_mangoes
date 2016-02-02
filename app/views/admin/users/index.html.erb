@@ -1,5 +1,19 @@
 <h1>List of users</h1>
 
+<table>
+  <tr>
+    <td>Username</td>
+    <td>Email</td>
+  </tr>
 <% @users.each do |user| %>
-  <p><%= user.full_name %></p>
+  <tr>
+    <td><%= user.full_name %></td>
+    <td><%= user.email %>f</td>
+  </tr>
 <% end %>
+</table>
+
+<hr/>
+
+<%= paginate @users %>
+<%= page_entries_info @users %>

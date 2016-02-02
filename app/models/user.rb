@@ -9,6 +9,8 @@ class User < ActiveRecord::Base
   validates :lastname, presence: true
   validates :password, length: { in: 6..20 }, on: :create
 
+  paginates_per 1
+
   def full_name
     "#{firstname} #{lastname}"
   end
