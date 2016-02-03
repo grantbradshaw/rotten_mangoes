@@ -1,6 +1,14 @@
 class MoviesController < ApplicationController
   def index
-    @movies = Movie.all
+    @movies = Movie.where('title LIKE ? and director LIKE ?', "%#{params[:title]}%", "%#{params[:director]}%")
+    case params[:runtime_in_minutes]
+    when "1"
+      @movies = @movies.where('runtime_in_minutes < 90') 
+    when "2"
+      @movies = @movies.where('runtime_in_minutes >= 90 and runtime_in_minutes < 120')
+    when "3"
+      @movies = @movies.where('runtime_in_minutes >= 120')
+    end
   end
 
   def show
@@ -16,7 +24,6 @@ class MoviesController < ApplicationController
   end
 
   def create
-    binding.pry
     @movie = Movie.new(movie_params)
 
     if @movie.save
