@@ -10,7 +10,7 @@ class Movie < ActiveRecord::Base
   validates :release_date, presence: true
   validate :release_date_is_in_past
 
-  scope :search_title_director, lambda { |title, director| where('title LIKE ? and director LIKE ?', "%#{title}%", "%#{director}%") }
+  scope :search_title_director, lambda { |search| where('title LIKE ? OR director LIKE ?', "%#{search}%", "%#{search}%") }
 
   def self.in_runtime_range(time)
     case time
