@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
   
   has_many :reviews, dependent: :destroy
+  before_destroy :send_notification
 
   has_secure_password
 
@@ -13,5 +14,9 @@ class User < ActiveRecord::Base
 
   def full_name
     "#{firstname} #{lastname}"
+  end
+
+  def send_notification
+    UserMailer.delete_email(self).deliver
   end
 end
