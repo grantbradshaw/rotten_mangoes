@@ -11,7 +11,7 @@
   <tr>
     <td><%= user.full_name %></td>
     <td><%= user.email %></td>
-    <td><%= button_to "Delete User", admin_user_path(user), method: :delete %></td>
+    <% unless current_user.id == user.id %><td><%= button_to "Delete User", admin_user_path(user), method: :delete %></td><% end %>
   </tr>
 <% end %>
 </table>
