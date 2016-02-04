@@ -20,6 +20,8 @@ class Movie < ActiveRecord::Base
       where('runtime_in_minutes >= 90 and runtime_in_minutes < 120')
     when "3"
       where('runtime_in_minutes >= 120')
+    else
+      all
     end
   end
 
