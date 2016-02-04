@@ -10,6 +10,19 @@ class Movie < ActiveRecord::Base
   validates :release_date, presence: true
   validate :release_date_is_in_past
 
+  scope :search_title_director, lambda { |title, director| where('title LIKE ? and director LIKE ?', "%#{title}%", "%#{director}%") }
+
+  def self.in_runtime_range(time)
+    case time
+    when "1"
+      where('runtime_in_minutes < 90') 
+    when "2"
+      where('runtime_in_minutes >= 90 and runtime_in_minutes < 120')
+    when "3"
+      where('runtime_in_minutes >= 120')
+    end
+  end
+
   def release_date_is_in_past
     if release_date.present?
       errors.add(:release_date, "should be in the past") if release_date > Date.today
