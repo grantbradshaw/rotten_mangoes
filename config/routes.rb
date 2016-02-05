@@ -8,5 +8,7 @@ RottenMangoes::Application.routes.draw do
 
   namespace :admin do
     resources :users, only: [:index, :new, :create, :show, :destroy]
+    post 'sessions/:id/alias' => 'sessions#alias', as: :sessions_alias
+    post 'sessions/uncloak' => 'sessions#uncloak', as: :sessions_uncloak
   end
 end

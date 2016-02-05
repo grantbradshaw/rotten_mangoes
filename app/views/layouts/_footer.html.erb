@@ -5,6 +5,9 @@
       <% if current_user.admin %>
         | <%= link_to "I am an admin!", admin_users_path %>
       <% end %>
+      <% if session[:hidden_admin] %>
+        | <%= link_to "Become yourself", admin_sessions_uncloak_path, method: :post %>
+      <% end %>
       <% else %>
         <%= link_to "Log In", new_session_path %> | <%= link_to "Sign Up", new_user_path %>
     <% end %>
