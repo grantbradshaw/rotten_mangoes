@@ -1,6 +1,6 @@
 class Admin::UsersController < ApplicationController
 
-  before_filter :restrict_non_admin
+  before_filter :restrict_access, :restrict_non_admin
   def index
     @users = Kaminari.paginate_array(User.order(:firstname)).page(params[:page]).per(5)
   end
