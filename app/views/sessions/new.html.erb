@@ -1,12 +1,12 @@
-<h1>Log In</h1>
-<%= form_tag session_path do %>
-  <div>
-    <%= label_tag :email %><br/>
-    <%= text_field_tag :email %>
-  </div>
-  <div>
-    <%= label_tag :password %><br/>
-    <%= password_field_tag :password %>
-  </div>
-  <div><%= submit_tag "Log In" %></div>
-<% end %>
+<div class="login">
+  <h1>Come on in to Rotten Mangoes!</h1>
+  <%= form_tag session_path do %>
+    <div class="input-group">
+      <%= text_field_tag :email, nil, class: "form-control", placeholder: "email" %>
+    </div>
+    <div class="input-group">
+      <%= password_field_tag :password, nil, class: "form-control", placeholder: "password" %>
+    </div>
+    <div><%= submit_tag "Log In", {class: "btn btn-default"} %></div>
+  <% end %>
+</div>

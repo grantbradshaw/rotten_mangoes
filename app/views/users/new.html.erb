@@ -11,23 +11,22 @@
       </ul>
     </div>
   <% end %>
-  <div>
-    <%= f.label :email %><br/>
-    <%= f.text_field :email %>
+  <div class="input-group">
+    <%= f.text_field :email, {class: "form-control", placeholder: "email"} %>
   </div>
-  <div>
+  <div class="input-group">
     <%= f.label :firstname, "First Name" %><br/>
-    <%= f.text_field :firstname %>
+    <%= f.text_field :firstname, {class: "form-control", placeholder: "firstname"} %>
   </div>
-  <div>
+  <div class="input-group">
     <%= f.label :lastname, "Last Name" %><br/>
     <%= f.text_field :lastname %>
   </div>
-  <div>
+  <div class="input-group">
     <%= f.label :password %><br/>
     <%= f.password_field :password %>
   </div>
-  <div>
+  <div class="input-group">
     <%= f.label :password_confirmation %><br/>
     <%= f.password_field :password_confirmation %>
   </div>

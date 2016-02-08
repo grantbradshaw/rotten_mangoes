@@ -9,5 +9,10 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
- *= require_tree .
+ *= require bootstrap
+ *= require bootstrap-theme
+ *= require main
+ *= require admin/main
  */
+
+/* link to color scheme https://coolors.co/app/2d728f-3b8ea5-f5ee9e-f49e4c-ab3428 */
