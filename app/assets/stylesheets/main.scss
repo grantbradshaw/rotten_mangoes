@@ -1,24 +1,126 @@
+$mango-color: #F49E4C;
+$light-mango: #F5EE9E;
+$lighter-blue: #3B8EA5;
+$darker-blue: #2D728F;
+$mango-red: #AB3428;
+
+
 .navbar {
   .container-fluid {
-    background-color: #F5EE9E;
+    background-color: $light-mango;
   }
   .navbar-text {
     font-family: Garamond;
-    color: #AB3428;
+    color: $mango-red;
   }
   .navbar-link {
-    color: #2D728F;
+    color: $darker-blue;
   }
 }
 
 .login {
   h1 {
-    color: #F49E4C;
-    font-family: Garamond;
+    color: $mango-color;
   }
   .btn {
-    color: #3B8EA5;
+    margin-top: 10px;
+    color: $mango-red;
+    font-size: 14px;
   }
+  .input-group {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  margin-top: 100px;
+  text-align: center;
+  font-family: Garamond;
+}
+
+.sign-up {
+  h1 {
+    color: $mango-color;
+  }
+  .btn {
+    margin-top: 10px;
+    color: $mango-red;
+    font-size: 14px;
+  }
+  h4 {
+    color: $mango-color;
+  }
+  .input-group {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  margin-top: 100px;
+  text-align: center;
+  font-family: Garamond;
+}
+
+h2.movie-form {
+  text-align: center;
+  color: $mango-color;
+}
+
+.movie-form {
+  .movie-file-form {
+    margin-right: auto;
+    margin-left: auto;
+  }
+  input {
+    width: 320px;
+  }
+  textarea {
+    width: 320px;
+    height: 150px;
+  }
+  .btn {
+    margin-top: 10px;
+    color: $mango-red;
+    font-size: 14px;
+  }
+  .movie-file-form.btn-default {
+    cursor: inherit;
+    background-color: $mango-red;
+    position: relative;
+    overflow: hidden;
+    width: 70px;
+    height: 17px;
+    margin-top: -10px;
+  }
+  .btn-default input[type=file] {
+    position: absolute;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    outline: none;
+    display: block;
+    min-width: 25%;
+    height: 20px;
+    top: 0;
+    right: 0;
+  }
+  .wrapper {
+    text-align: center;
+  }
+  label {
+    color: $mango-color;
+  }
+  input[name='commit'] {
+    width: 64px;
+  }
+  font-family: Garamond;
+  width: 320px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.flash {
+  font-family: Garamond;
+  font-size: 20px;
+  margin-left: 10px;
+  margin-top: -90px;
+  color: $lighter-blue;
+  position: absolute;
 }
 
 body {

@@ -8,7 +8,7 @@
 </head>
 <body class="<%= controller_name %>_<%= action_name %>">
   <% flash.each do |key, value| %>
-    <%= content_tag(:div, value) %>
+    <%= content_tag(:div, value, class: "flash") %>
   <% end %>
   <%= yield %>
   <%= render 'layouts/footer' %>

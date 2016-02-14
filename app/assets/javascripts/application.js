@@ -13,4 +13,8 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
-//= require_tree .
+//= require sessions
+//= require movies
+//= require reviews
+//= require users
+//= require main
