@@ -1,41 +1,43 @@
-<footer class="navbar navbar-default navbar-fixed-bottom">
-  <div class="container-fluid">
-    <div class="navbar-footer">
-      <ul class="nav navbar-nav">
-        <% if current_user %>
-          <li><p class="navbar-text">Signed in as <%= current_user.full_name %></p></li>
-          <li>
-            <span class="active">
-              <p class="navbar-text"><%= link_to "Log out", session_path, {class: "navbar-link",  method: :delete }  %></p>
-            </span>
-          </li>
-          <% if current_user.admin %>
+<footer class="navbar navbar-default">
+  <div class="footer">
+    <div class="container-fluid">
+      <div class="navbar-footer">
+        <ul class="nav navbar-nav">
+          <% if current_user %>
+            <li><p class="navbar-text">Signed in as <%= current_user.full_name %></p></li>
             <li>
               <span class="active">
-                <p class="navbar-text"><%= link_to "I am an admin!", admin_users_path, {class: "navbar-link"} %></p>
+                <p class="navbar-text"><%= link_to "Log out", session_path, {class: "navbar-link",  method: :delete }  %></p>
               </span>
             </li>
+            <% if current_user.admin %>
+              <li>
+                <span class="active">
+                  <p class="navbar-text"><%= link_to "I am an admin!", admin_users_path, {class: "navbar-link"} %></p>
+                </span>
+              </li>
+            <% end %>
+            <% if session[:hidden_admin] %>
+              <li>
+                <span class="active">
+                  <p class="navbar-text"><%= link_to "Become yourself", admin_sessions_uncloak_path, {class: "navbar-link", method: :post} %></p>
+                </span>
+              </li>
+            <% end %>
+            <% else %>
+              <li>
+                <span class="active">
+                  <p class="navbar-text"><%= link_to "Log In", new_session_path, {class: "navbar-link"} %></p>
+                </span>
+              </li>
+              <li>
+                <span class="active">
+                  <p class="navbar-text"><%= link_to "Sign Up", new_user_path, {class: "navbar-link"} %></p>
+                </span>
+              </li>
           <% end %>
-          <% if session[:hidden_admin] %>
-            <li>
-              <span class="active">
-                <p class="navbar-text"><%= link_to "Become yourself", admin_sessions_uncloak_path, {class: "navbar-link", method: :post} %></p>
-              </span>
-            </li>
-          <% end %>
-          <% else %>
-            <li>
-              <span class="active">
-                <p class="navbar-text"><%= link_to "Log In", new_session_path, {class: "navbar-link"} %></p>
-              </span>
-            </li>
-            <li>
-              <span class="active">
-                <p class="navbar-text"><%= link_to "Sign Up", new_user_path, {class: "navbar-link"} %></p>
-              </span>
-            </li>
-        <% end %>
-      </ul>
+        </ul>
+      </div>
     </div>
   </div>
 </footer>

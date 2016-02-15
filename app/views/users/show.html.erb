@@ -1,9 +1,8 @@
-<h1>View for this user!</h1>
-
-<h4>User: <%= @user.full_name %></h3>
-<h4>Email: <%= @user.email %></h4>
-<h4>Reviews by this user... </h4>
-<% @user.reviews.each do |review| %>
-  <p><%= review.text %> | <%= link_to Movie.find(review.movie).title, movie_path(Movie.find(review.movie)) %></p>  
-<% end %>
-
+<div class="user-container">
+  <h4>User: <%= @user.full_name %></h>
+  <h4>Email: <%= @user.email %></h4>
+  <h4>Reviews by this user... </h4>
+  <% @user.reviews.each do |review| %>
+    <p><%= review.text %> | <%= link_to Movie.find(review.movie).title, movie_path(Movie.find(review.movie)) %></p>  
+  <% end %>
+</div>

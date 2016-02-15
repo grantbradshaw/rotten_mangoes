@@ -1,28 +1,33 @@
-<h1>Rotten Mangoes</h1>
-<% if current_user %><%= link_to "Submit a movie!", new_movie_path %><% end %>
+<div class="movie-index">
+  <div class="spacer"></div>
+  <hr/>
+  
+  <% if current_user %><%= link_to "Submit a movie!", new_movie_path %><% end %>
 
-<hr>
+  <hr>
 
-<h4> Search for movies! </h4>
-
-<%= form_tag(movies_path, method: :get) do %>
-  <div>
-    <%= label_tag :search_term %><br/>
-    <%= text_field_tag :search_term %>
+  <div class="search-form">
+    <h4> Search for movies! </h4>
+    <%= form_tag(movies_path, method: :get) do %>
+      <div class="input-group">
+        <%= text_field_tag :search_term, '', :class => "form-control" %>
+      </div>
+      <div class="btn-group">
+        <%= radio_button_tag(:runtime_in_minutes, 1) %>
+        <%= label_tag(:runtime_in_minutes, "Under 90 minutes") %>
+        <%= radio_button_tag(:runtime_in_minutes, 2) %>
+        <%= label_tag(:runtime_in_minutes, "Between 90 and 120 minutes") %>
+        <%= radio_button_tag(:runtime_in_minutes, 3) %>
+        <%= label_tag(:runtime_in_minutes, "Over 120 minutes") %>
+      </div>
+      <div><%= submit_tag "Search!", :class => "btn btn-default" %></div>
+    <% end %>
   </div>
-  <div>
-    <%= radio_button_tag(:runtime_in_minutes, 1) %>
-    <%= label_tag(:runtime_in_minutes, "Under 90 minutes") %>
-    <%= radio_button_tag(:runtime_in_minutes, 2) %>
-    <%= label_tag(:runtime_in_minutes, "Between 90 and 120 minutes") %>
-    <%= radio_button_tag(:runtime_in_minutes, 3) %>
-    <%= label_tag(:runtime_in_minutes, "Over 120 minutes") %>
-  </div>
-  <div><%= submit_tag "Search!" %></div>
-<% end %>
 
-<hr>
-<% @movies.each do |movie| %>
-  <%= render movie %>
-<% end %>
+  <hr>
+  <% @movies.each do |movie| %>
+    <%= render movie %>
+    <hr/>
+  <% end %>
+</div>
 

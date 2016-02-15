@@ -6,11 +6,15 @@
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
-<body class="<%= controller_name %>_<%= action_name %>">
-  <% flash.each do |key, value| %>
-    <%= content_tag(:div, value, class: "flash") %>
-  <% end %>
-  <%= yield %>
-  <%= render 'layouts/footer' %>
-</body>
+<div class="wrapper">
+  <body class="<%= controller_name %>_<%= action_name %>">
+    <%= render 'layouts/header' %>
+    <% flash.each do |key, value| %>
+      <%= content_tag(:div, value, class: "flash") %>
+    <% end %>
+    <%= yield %>
+    <div class="push"></div>
+    <%= render 'layouts/footer' %>
+  </body>
+</div>
 </html>

@@ -4,17 +4,39 @@ $lighter-blue: #3B8EA5;
 $darker-blue: #2D728F;
 $mango-red: #AB3428;
 
+html, body {
+  height: 100%;
+}
+
+* {
+  margin: 0;
+}
 
 .navbar {
-  .container-fluid {
-    background-color: $light-mango;
+  .footer {
+    .container-fluid {
+      background-color: $light-mango;
+      margin-bottom: 0px;
+    }
+    .navbar-text {
+      font-family: Garamond;
+      color: $mango-red;
+    }
+    .navbar-link {
+      color: $darker-blue;
+    }
   }
-  .navbar-text {
-    font-family: Garamond;
-    color: $mango-red;
-  }
-  .navbar-link {
-    color: $darker-blue;
+  .header {
+    .container-fluid {
+      background-color: white;
+    }
+    img {
+      height: 60px;
+    }
+    h3 {
+      color: $mango-color;
+      font-family: Garamond;
+    }
   }
 }
 
@@ -46,7 +68,7 @@ $mango-red: #AB3428;
     font-size: 14px;
   }
   h4 {
-    color: $mango-color;
+    color: $lighter-blue;
   }
   .input-group {
     margin-left: auto;
@@ -114,11 +136,84 @@ h2.movie-form {
   margin-right: auto;
 }
 
+.movie-container {
+  position: relative;
+  .movie-image {
+    float: left;
+    width: 300px;
+    img {
+      display: block;
+      margin: 0 auto;
+      margin-top: 30px
+    }
+  }
+  .movie-details {
+    float: left;
+    width: 300px;
+  }
+  .splitter {
+    clear: both;
+  }
+}
+
+.movie-index{
+  .spacer {
+    height: 10px;
+  }
+  .search-form {
+    label {
+      color: $lighter-blue;
+    }
+    h4 {
+      color: $mango-color;
+    }
+    .btn {
+      color: $mango-red;
+      font-size: 14px;
+    }
+    margin-left: 5px;
+  }
+}
+
+.movie-review {
+  h2 {
+    color: $mango-color;
+  }
+  label {
+    color: $lighter-blue;
+  }
+  .btn {
+    margin-top: 10px;
+    color: $mango-red;
+    font-size: 14px;
+  }
+  #review_rating_out_of_ten {
+    width: 15%
+  }
+}
+
+.movie-manage {
+  margin-left: 300px
+}
+
+.review-container {
+  margin-left: 5px;
+  h3 {
+    color: $mango-color;
+  }
+  a {
+    color: $lighter-blue;
+  }
+  p {
+
+  }
+}
+
 .flash {
   font-family: Garamond;
   font-size: 20px;
   margin-left: 10px;
-  margin-top: -90px;
+  margin-top: 0px;
   color: $lighter-blue;
   position: absolute;
 }
