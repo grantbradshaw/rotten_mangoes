@@ -1,23 +1,35 @@
-<h1>List of users</h1>
+<div class="admin-container">
+  <h1>List of users</h1>
 
-<%= link_to "Create a new user", new_admin_user_path %>
+  <hr />
 
-<table>
-  <tr>
-    <td>Username</td>
-    <td>Email</td>
-  </tr>
-<% @users.each do |user| %>
-  <tr>
-    <td><%= user.full_name %></td>
-    <td><%= user.email %></td>
-    <% unless current_user.id == user.id %><td><%= button_to "Delete User", admin_user_path(user), method: :delete %></td><% end %>
-    <% unless user.admin %><td><%= button_to 'alias as user', admin_sessions_alias_path(user) %></td><% end %>
-  </tr>
-<% end %>
-</table>
+  <%= link_to "Create a new user", new_admin_user_path %>
 
-<hr/>
+  <hr />
 
-<%= paginate @users %>
-<%= page_entries_info @users %>
+  <table class="table-striped">
+    <thead>
+      <tr>
+        <th>Username</td>
+        <th>Email</td>
+        <th>Delete User</td>
+        <th>Alias as User</td>
+      </tr>
+    </thead>
+    <tbody>
+      <% @users.each do |user| %>
+        <tr>
+          <td><%= user.full_name %></td>
+          <td><%= user.email %></td>
+          <% unless current_user.id == user.id %><td><%= button_to "Delete User", admin_user_path(user), method: :delete, class: "btn btn-default" %></td><% else %><td></td><% end %>
+          <% unless user.admin %><td><%= button_to 'Alias as user', admin_sessions_alias_path(user), class: "btn btn-default" %></td><% else %><td></td><% end %>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <hr/>
+
+  <%= paginate @users %>
+  <%= page_entries_info @users %>
+</div>

@@ -4,19 +4,30 @@ $lighter-blue: #3B8EA5;
 $darker-blue: #2D728F;
 $mango-red: #AB3428;
 
-html, body {
-  height: 100%;
+html {
+  position: relative;
+  min-height: 100%;
 }
 
-* {
-  margin: 0;
+body {
+  margin-bottom: 40px;
+  .wrapper {
+    padding: 5px 15px 0;
+  }
 }
 
 .navbar {
+  border: 0;
   .footer {
+    margin-top: 20px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+
     .container-fluid {
       background-color: $light-mango;
-      margin-bottom: 0px;
+      padding-right: 15px;
+      padding-left: 15px;
     }
     .navbar-text {
       font-family: Garamond;
@@ -53,7 +64,7 @@ html, body {
     margin-left: auto;
     margin-right: auto;
   }
-  margin-top: 100px;
+  margin-top: 30px;
   text-align: center;
   font-family: Garamond;
 }
@@ -74,7 +85,7 @@ html, body {
     margin-left: auto;
     margin-right: auto;
   }
-  margin-top: 100px;
+  margin-top: 30px;
   text-align: center;
   font-family: Garamond;
 }
@@ -160,6 +171,11 @@ h2.movie-form {
   .spacer {
     height: 10px;
   }
+  .new-movie-btn {
+    color: $mango-red;
+    font-size: 14px;
+    margin-left: 5px;
+  }
   .search-form {
     label {
       color: $lighter-blue;
@@ -193,7 +209,8 @@ h2.movie-form {
 }
 
 .movie-manage {
-  margin-left: 300px
+  margin-left: 300px;
+  color: $lighter-blue;
 }
 
 .review-container {
@@ -201,11 +218,22 @@ h2.movie-form {
   h3 {
     color: $mango-color;
   }
+}
+
+.admin-container {
+  h1 {
+    color: $mango-color;
+  }
+  td {
+    width: 7%;
+    padding: 5px 0px 5px 0px;
+  }
+  .btn {
+    color: $mango-red;
+    font-size: 14px;
+  }
   a {
     color: $lighter-blue;
-  }
-  p {
-
   }
 }
 
