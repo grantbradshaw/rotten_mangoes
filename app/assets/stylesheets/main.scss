@@ -15,6 +15,9 @@ body {
     padding: 5px 15px 0;
   }
 }
+.all-container {
+  position: relative;
+}
 
 .navbar {
   border: 0;
@@ -221,6 +224,9 @@ h2.movie-form {
 }
 
 .admin-container {
+  .spacer {
+    height: 10px;
+  }
   h1 {
     color: $mango-color;
   }
@@ -228,8 +234,12 @@ h2.movie-form {
     width: 7%;
     padding: 5px 0px 5px 0px;
   }
-  .btn {
+  .btn-delete {
     color: $mango-red;
+    font-size: 14px;
+  }
+  .btn-alias {
+    color: $darker-blue;
     font-size: 14px;
   }
   a {
@@ -239,11 +249,51 @@ h2.movie-form {
 
 .flash {
   font-family: Garamond;
-  font-size: 20px;
-  margin-left: 10px;
-  margin-top: 0px;
-  color: $lighter-blue;
+  font-size: 16px;
+  color: white;
+}
+
+.flash-container {
   position: absolute;
+  top: 110px;
+  right: 40px;
+}
+
+.admin-create-user {
+  h1 {
+    color: $mango-color;
+  }
+  .btn {
+    margin-top: 10px;
+    color: $mango-red;
+    font-size: 14px;
+  }
+  h4 {
+    color: $lighter-blue;
+  }
+  .input-group {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .checkbox {
+    display: inline-block;
+    color: $lighter-blue;
+  }
+  margin-top: 30px;
+  text-align: center;
+  font-family: Garamond;
+}
+
+h2.movie-form {
+  text-align: center;
+  color: $mango-color;
+}
+
+.user-container{
+  font-size: 16px;
+  b, h4 {
+    color: $mango-color;
+  }
 }
 
 body {

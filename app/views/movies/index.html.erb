@@ -1,7 +1,4 @@
 <div class="movie-index">
-  <div class="spacer"></div>
-  <hr/>
-  
   <% if current_user %><%= button_to "Submit a movie!", new_movie_path, :class => "btn btn-default new-movie-btn", :method => :get %><% end %>
 
   <hr>

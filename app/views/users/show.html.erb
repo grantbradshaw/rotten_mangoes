@@ -1,6 +1,6 @@
 <div class="user-container">
-  <h4>User: <%= @user.full_name %></h>
-  <h4>Email: <%= @user.email %></h4>
+  <p><b>User:</b> <%= @user.full_name %></p>
+  <p><b>Email:</b> <%= @user.email %></p>
   <h4>Reviews by this user... </h4>
   <% @user.reviews.each do |review| %>
     <p><%= review.text %> | <%= link_to Movie.find(review.movie).title, movie_path(Movie.find(review.movie)) %></p>  

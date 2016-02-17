@@ -12,8 +12,6 @@
       <tr>
         <th>Username</td>
         <th>Email</td>
-        <th>Delete User</td>
-        <th>Alias as User</td>
       </tr>
     </thead>
     <tbody>
@@ -21,8 +19,8 @@
         <tr>
           <td><%= user.full_name %></td>
           <td><%= user.email %></td>
-          <% unless current_user.id == user.id %><td><%= button_to "Delete User", admin_user_path(user), method: :delete, class: "btn btn-default" %></td><% else %><td></td><% end %>
-          <% unless user.admin %><td><%= button_to 'Alias as user', admin_sessions_alias_path(user), class: "btn btn-default" %></td><% else %><td></td><% end %>
+          <% unless user.admin %><td><%= button_to "Delete User", admin_user_path(user), method: :delete, class: "btn btn-default btn-delete" %></td><% else %><td></td><% end %>
+          <% unless user.admin %><td><%= button_to 'Alias as user', admin_sessions_alias_path(user), class: "btn btn-default btn-alias" %></td><% else %><td></td><% end %>
         </tr>
       <% end %>
     </tbody>

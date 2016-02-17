@@ -7,11 +7,13 @@
   <%= csrf_meta_tags %>
 </head>
 <div class="wrapper">
-  <body class="<%= controller_name %>_<%= action_name %>">
+  <body class="<%= controller_name %>_<%= action_name %> all-container">
     <%= render 'layouts/header' %>
-    <% flash.each do |key, value| %>
-      <%= content_tag(:div, value, class: "flash") %>
-    <% end %>
+    <div class="flash-container">
+      <% flash.each do |key, value| %>
+        <%= content_tag(:div, value, class: "flash alert alert-info") %>
+      <% end %>
+    </div>
     <%= yield %>
     <div class="push"></div>
     <%= render 'layouts/footer' %>

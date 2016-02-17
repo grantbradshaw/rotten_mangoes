@@ -13,7 +13,7 @@
             <% if current_user.admin %>
               <li>
                 <span class="active">
-                  <p class="navbar-text"><%= link_to "I am an admin!", admin_users_path, {class: "navbar-link"} %></p>
+                  <p class="navbar-text"><%= link_to "Manage users", admin_users_path, {class: "navbar-link"} %></p>
                 </span>
               </li>
             <% end %>

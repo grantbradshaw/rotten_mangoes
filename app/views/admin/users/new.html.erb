@@ -1,43 +1,41 @@
-<h1>Create a new user!</h1>
+<div class="admin-create-user">
+  <h1>Create a new user!</h1>
 
-<%= link_to "See all users", admin_users_path %>
-
-<%= form_for @user, url: admin_user_url(@user) do |f| %>
-  <% if @user.errors.any? %>
+  <%= form_for @user, url: admin_user_url(@user) do |f| %>
+    <% if @user.errors.any? %>
+      <div>
+        <%= pluralize(@user.errors.count, 'error') %> prevented this account from being created:
+        <ul>
+          <% @user.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+    <div class="input-group">
+      <%= f.text_field :email, {class: "form-control", placeholder: "email"} %>
+    </div>
+    <div class="input-group">
+      <%= f.text_field :firstname, {class: "form-control", placeholder: "First Name"} %>
+    </div>
     <div>
-      <%= pluralize(@user.errors.count, 'error') %> prevented this account from being created:
-      <ul>
-        <% @user.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-        <% end %>
-      </ul>
+    <div class="input-group">
+      <%= f.text_field :lastname, {class: "form-control", placeholder: "Last Name"} %>
+    </div>
+    <h4>Password Fields</h4>
+    <div class="input-group">
+      <%= f.password_field :password, {class: "form-control", placeholder: "Enter Password..."} %>
+    </div>
+    <div class="input-group">
+      <%= f.password_field :password_confirmation, {class: "form-control", placeholder: "Confirm Password..."} %>
+    </div>
+    <div class="checkbox">
+      <%= f.label :admin do %>
+      <%= f.check_box :admin %> Admin?
+      <% end %>
+    </div>
+    <div>
+      <div><%= f.submit "Submit", {class: "btn btn-default"} %></div>
     </div>
   <% end %>
-  <div>
-    <%= f.label :email %><br/>
-    <%= f.text_field :email %>
-  </div>
-  <div>
-    <%= f.label :firstname, "First Name" %><br/>
-    <%= f.text_field :firstname %>
-  </div>
-  <div>
-    <%= f.label :lastname, "Last Name" %><br/>
-    <%= f.text_field :lastname %>
-  </div>
-  <div>
-    <%= f.label :password %><br/>
-    <%= f.password_field :password %>
-  </div>
-  <div>
-    <%= f.label :password_confirmation %><br/>
-    <%= f.password_field :password_confirmation %>
-  </div>
-  <div>
-    <%= f.label :admin %><br/>
-    <%= f.check_box :admin %>
-  </div>
-  <div>
-    <div><%= f.submit "Submit" %></div>
-  </div>
-<% end %>
+</div>
